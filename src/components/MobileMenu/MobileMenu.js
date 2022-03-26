@@ -3,8 +3,6 @@ import React from "react";
 import styled from "styled-components/macro";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 
-import { COLORS, QUERIES } from "../../constants";
-
 import UnstyledButton from "../UnstyledButton";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
@@ -14,7 +12,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
         <CloseButton onClick={onDismiss}>
-          <Icon id="close" color={COLORS.gray[900]} />
+          <Icon id="close" color={`var(--color-gray-900)`} />
           <VisuallyHidden>Dismiss menu</VisuallyHidden>
         </CloseButton>
         <Nav>
@@ -43,7 +41,7 @@ const Overlay = styled(DialogOverlay)`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(96, 100, 108, 0.8);
+  background: var(--color-backdrop);
 `;
 
 const Content = styled(DialogContent)`
@@ -75,11 +73,11 @@ const Nav = styled.nav`
   text-transform: uppercase;
 
   & a {
-    color: ${COLORS.gray[900]};
+    color: var(--color-gray-900);
     text-decoration: none;
 
     &#sale {
-      color: ${COLORS.secondary};
+      color: var(--color-secondary);
     }
   }
 `;
@@ -91,7 +89,7 @@ const Footer = styled.footer`
   font-size: 14px;
 
   & a {
-    color: ${COLORS.gray[700]};
+    color: var(--color-gray-700);
     text-decoration: none;
   }
 `;
